@@ -1,0 +1,25 @@
+function setup() {
+    createCanvas(710, 400, WEBGL);
+  }
+  
+  function draw() {
+    background(250);
+    rotateY(frameCount * 0.01);
+  
+    for (let j = 0; j < 5; j++) {
+      push();
+      for (let i = 0; i < 50; i++) {
+        translate(
+          tan(frameCount * 0.001 + j) * 80,
+          // cos(frameCount * 0.001 + j) * 10,
+          i * 0.1
+        );
+        rotateZ(frameCount * 0.001);
+        push();
+        sphere(10, 4, 8);
+        pop();
+      }
+      pop();
+    }
+  }
+  
